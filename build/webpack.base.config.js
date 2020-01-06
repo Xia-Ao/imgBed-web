@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = requrie('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const resolve = (dir) => path.join(__dirname, '..', dir);
@@ -18,7 +18,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'main.[hash:8].js',
-        path: resolve(dist),
+        path: resolve('dist'),
     },
     module: {
         rules: [
