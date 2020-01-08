@@ -1,1 +1,4 @@
-buils/*
+build/*
+
+node_modules/*
+dist/*
