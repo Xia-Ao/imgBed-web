@@ -2,7 +2,7 @@
  * @Author: ao.xia 
  * @Date: 2020-01-07 00:01:02 
  * @Last Modified by: ao.xia
- * @Last Modified time: 2020-01-08 00:03:15
+ * @Last Modified time: 2020-01-20 22:07:08
  */
 const merge = require('webpack-merge');
 const webpack = require('webpack');
@@ -21,26 +21,6 @@ module.exports = merge(baseConfig, {
     watchOptions: {
         aggregateTimeout: 500,
         ignored: /node_moudles/,
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ],
-            },
-            {
-                test: /\.less$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader',
-                ]
-            },
-        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

@@ -1,6 +1,6 @@
 
-import App from './App';
-import Header from './views/header/index';
+import App from './App.vue';
+import Header from './views/header/index.vue';
 
 export default [
     {

@@ -14,27 +14,6 @@ const baseConfig = require('./webpack.base.config.js');
 
 module.exports = merge(baseConfig, {
     mode: 'production',
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                ],
-            },
-            {
-                test: /\.less$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader',
-                ]
-            },
-        ]
-    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'index.[hash].css',

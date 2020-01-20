@@ -5,16 +5,18 @@
  * @LastEditors  : ao.xia
  * @LastEditTime : 2020-01-06 00:47:29
  */
-const fs = require('fs');
 const path = require('path');
+const process = require('process');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = (dir) => path.join(__dirname, '..', dir);
+const prodMode = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/main.ts',
     output: {
         filename: 'main.[hash:8].js',
         path: resolve('dist'),
@@ -22,22 +24,60 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.tsx?$/,
                 include: resolve('src'),
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                        ],
-                        plugins: [
-                            ["@babel/plugin-proposal-decorators", {"legacy": true}],
-                            ["@babel/plugin-proposal-class-properties", {"loose": true}],
-                            ["@babel/plugin-transform-runtime"],
-                        ]
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                '@babel/preset-env',
+                            ],
+                            // 支持一些高级语法
+                            plugins: [
+                                ["@babel/plugin-proposal-decorators", {"legacy": true}],
+                                ["@babel/plugin-proposal-class-properties", {"loose": true}],
+                                ["@babel/plugin-transform-runtime"],
+                            ]
+                        }
+                    }, 
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/]
+                        }
                     }
-                }
+                ]
+            },
+            {
+                test: /\.vue$/,
+                use: [
+                    {
+                        loader: 'vue-loader',
+                        options: {
+                            loaders: {
+                                'less': 'vue-style-loader!css-loader!less-loader',
+                            }
+                        }
+                    },
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader',
+                ]
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
@@ -49,12 +89,7 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.vue$/,
-                use: [
-                    'vue-loader',
-                ]
-            }
+            
         ]
     },
     plugins: [
@@ -66,7 +101,7 @@ module.exports = {
         new VueLoaderPlugin(),
     ],
     resolve: {
-        extensions: ['.js', '.json', '.vue', '.less'],
+        extensions: ['.ts', '.js', '.vue', '.json', '.less'],
         alias: {
             '@': resolve('src'),
             'vue': 'vue/dist/vue.esm',

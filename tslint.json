@@ -1,0 +1,11 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "rules": {
+        "indent": [true, "spaces", 2],      
+        "semicolon": [true, "always"]       
+    },
+    "rulesDirectory": []
+}
