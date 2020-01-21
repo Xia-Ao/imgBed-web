@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h2>HEADER2</h2>
-    从App传入过来的参数：{{age}}
+    从App传入过来的参数：
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class Header extends Vue{
-  @Prop() age!:number;
+  // @Prop() age!:number;
   
 }
 </script>

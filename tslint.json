@@ -5,7 +5,11 @@
     ],
     "rules": {
         "indent": [true, "spaces", 2],      
-        "semicolon": [true, "always"]       
+        "semicolon": [true, "always"],
+        "quotemark": [true, "single"],
+        "ordered-imports": false,
+        "object-literal-sort-keys": false,
+        "interface-name": false
     },
     "rulesDirectory": []
 }

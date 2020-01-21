@@ -30,17 +30,7 @@ module.exports = {
                 use: [
                     {
                         loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                '@babel/preset-env',
-                            ],
-                            // 支持一些高级语法
-                            plugins: [
-                                ["@babel/plugin-proposal-decorators", {"legacy": true}],
-                                ["@babel/plugin-proposal-class-properties", {"loose": true}],
-                                ["@babel/plugin-transform-runtime"],
-                            ]
-                        }
+                        // 相关配置详见.babelrc文件
                     }, 
                     {
                         loader: 'ts-loader',
