@@ -1,46 +1,56 @@
+/*
+ * @Author: ao.xia 
+ * @Date: 2020-01-24 17:36:18 
+ * @Last Modified by: ao.xia
+ * @Last Modified time: 2020-01-25 21:37:16
+ */
 <template>
-    <div class="home">
-        <h1>sdfsdkjh</h1>上岛咖啡哈电视
-        <!-- <Header 
-            :age=age
-        /> -->
-        <img
-            src="http://img.xiaao.xin/image/M00/00/00/L2Kexl4MmImAbs2CAAAJp9zm3p4727.png"
-            alt
-            class
-        />
-        <button @click.stop="testMothods">按钮</button>
-        <br>
-        <router-link to="/">Go to home</router-link>
-        <router-link to="/header">Go to header</router-link>
-
-        <router-view/>
+    <div class="layout">
+        <Announcement v-if="announcement" />
+        <Header class="header" />
+        <div class="content">
+            <div class="center">
+                <router-view />
+            </div>
+        </div>
+        <Footer class="footer" />
     </div>
 </template>
 
 <script lang='ts'>
-import Header from './header/index.vue';
-import { Vue, Component } from 'vue-property-decorator';
+import Header from "./header/Header.vue";
+import Announcement from "./header/Announcement.vue";
+import Footer from "./footer/index.vue";
+import { Vue, Component } from "vue-property-decorator";
 
 @Component({
-  components: {
-    Header,
-  }
+    components: {
+        Announcement,
+        Header,
+        Footer
+    }
 })
 export default class App extends Vue {
-    private data() {
-        return {
-            age: 26,
-        }
-    }
-    private testMothods() {
-        let a:number = 0;
-        let arr = [1,2,4];
-        console.log(arr.includes(2));
-        console.log(a, '0-000--000');
-    }
+    private announcement: boolean = false;
 }
 </script>
 
-<style>
+<style lang='less' scoped>
+.layout {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .navbar {
+        width: 100%;
+    }
+    .footer {
+        width: 100%;
+    }
+    .content {
+        width: 1200px;
+        margin: 40px auto auto;
+        background: #ccc;
+    }
+}
 </style>

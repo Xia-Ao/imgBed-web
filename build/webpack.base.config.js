@@ -20,6 +20,7 @@ module.exports = {
     output: {
         filename: 'main.[hash:8].js',
         path: resolve('dist'),
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -31,7 +32,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         // 相关配置详见.babelrc文件
-                    }, 
+                    },
                     {
                         loader: 'ts-loader',
                         options: {
@@ -75,11 +76,14 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 10 * 1024,
-                        outputPath: 'img/', // 输出到一个文件夹中
+                        name: 'img/[name].[ext]',
                     }
                 }
             },
-            
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+                loader: 'file-loader'
+            }
         ]
     },
     plugins: [

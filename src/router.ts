@@ -1,12 +1,10 @@
 
-import Layout from './views/Layout.vue';
-import Header from './views/header/index.vue';
+import Home from './views/home/index.vue';
+import imgDetail from './views/detail/index.vue';
 
 interface Route {
     path: string;
-    // name: string;
-    // redirect?: object;
-    // component?: object;
+    name: string;
     [propName: string]: any;
 }
 
@@ -14,17 +12,17 @@ const routes: Route[] = [
     {
         path: '/',
         name: 'home',
-        component: Layout,
+        component: Home,
     },
+    // {
+    //     path: '*',
+    //     name: 'home',
+    //     redirect: '/',
+    // },
     {
-        path: '/home',
-        name: 'home1',
-        redirect: '/',
-    },
-    {
-        path: '/header',
-        name: 'header',
-        component: Header,
+        path: '/detail',
+        name: 'detail',
+        component: imgDetail,
     },
 ];
 
