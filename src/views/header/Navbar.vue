@@ -31,7 +31,7 @@
 <script lang='ts'>
 import { Vue, Component } from "vue-property-decorator";
 import { Menu, MenuItem, Submenu, MenuItemGroup } from "element-ui";
-import menu from "../../menu";
+import menu from "./menu";
 
 Vue.use(Menu);
 Vue.use(MenuItem);

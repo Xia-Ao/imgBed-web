@@ -7,11 +7,17 @@
 
 import VueRouter from 'vue-router';
 import Vue from 'vue';
+import axios from 'axios';
 
 import routes from './router';
+import {baseApi} from './common/ts/global';
 import App from './App.vue';
 import 'element-ui/lib/theme-chalk/index.css';
 import './index.less';
+
+axios.defaults.baseURL = baseApi;
+
+// 在实例已创建后修改默认值
 
 Vue.use(VueRouter);
 

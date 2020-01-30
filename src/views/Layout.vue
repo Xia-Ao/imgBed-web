@@ -50,7 +50,7 @@ export default class App extends Vue {
     .content {
         width: 1200px;
         margin: 40px auto auto;
-        background: #ccc;
+        background: #fff;
     }
 }
 </style>
