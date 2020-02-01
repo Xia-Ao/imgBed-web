@@ -2,7 +2,7 @@
  * @Author: ao.xia
  * @Date: 2020-01-06 00:17:26
  * @Last Modified by: ao.xia
- * @Last Modified time: 2020-01-25 16:46:44
+ * @Last Modified time: 2020-02-01 15:13:20
  */
 
 import VueRouter from 'vue-router';
@@ -23,7 +23,6 @@ Vue.use(VueRouter);
 
 new Vue({
     router: new VueRouter({
-        // mode: 'history',
         routes,
     }),
     render: (h) => h(App),

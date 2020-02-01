@@ -59,8 +59,8 @@
                         <el-tag>{{scope.row.fileType}}</el-tag>
                     </template>
                 </el-table-column>
-                <el-table-column prop="size" label="文件大小(单位B)" align="center"></el-table-column>
-                <el-table-column prop="createTime" label="上传时间" width="100" align="center"></el-table-column>
+                <el-table-column prop="size" label="文件大小(单位KB)" align="center"></el-table-column>
+                <el-table-column prop="createTime" label="上传时间" width="170" align="center"></el-table-column>
                 <el-table-column label="操作" width="180">
                     <template slot-scope="scope">
                         <el-button
@@ -235,7 +235,7 @@ export default class Home extends Vue {
         previewUrl: item.url,
         url: item.url,
         fileType: item.extension,
-        size: item.size,
+        size: `${(item.size / 1024).toFixed(1)}Kb`,
         createTime: item.createTime,
       });
     });
