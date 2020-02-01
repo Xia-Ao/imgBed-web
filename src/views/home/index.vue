@@ -8,6 +8,7 @@
                 drag
                 action="#"
                 multiple
+                accept="image/*"
                 :auto-upload="false"
                 :limit="5"
                 :on-change="handleFileChange"
@@ -18,7 +19,7 @@
                     将文件拖到此处，或
                     <em>点击上传</em>
                 </div>
-                <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+                <div class="el-upload__tip" slot="tip">只能上传jpg/png等图片格式文件，且不超过500kb</div>
             </el-upload>
             <div class="upload-btn">
                 <el-button size="big" type="primary" @click.stop="handelUploadBtn">立即上传</el-button>
