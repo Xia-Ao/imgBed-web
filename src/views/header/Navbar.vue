@@ -9,6 +9,7 @@
                 <el-menu
                     mode="horizontal"
                     router
+                    :default-active="$route.path"
                     background-color="#545c64"
                     text-color="#fff"
                     active-text-color="#ffd04b"
@@ -18,6 +19,7 @@
                         v-for="(router, index) in menus"
                         :key="index"
                         :index="router.path"
+                        :route="router"
                     >
                         <i v-if="router.icon" :class="router.icon"></i>
                         <span>{{router.label}}</span>
@@ -55,6 +57,7 @@ export default class Navbar extends Vue {
      * 回到首页
      */
     private goHome(): void {
+        this.$router.push('/')
         console.log('111goHome');
     }
 }

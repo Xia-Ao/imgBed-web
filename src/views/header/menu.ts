@@ -10,14 +10,14 @@ const menu: Imenu[] = [
     {
         name: 'home',
         label: '图床',
-        icon: 'el-icon-menu',
-        path: '/',
+        icon: 'el-icon-picture',
+        path: '/home',
     },
     {
-        name: 'detail',
-        label: '图片详情',
+        name: 'about',
+        label: 'About',
         icon: 'el-icon-document',
-        path: '/detail',
+        path: '/about',
     },
 ];
 

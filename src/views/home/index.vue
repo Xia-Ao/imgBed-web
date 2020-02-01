@@ -124,7 +124,7 @@ import {
   Upload,
 } from 'element-ui';
 
-import { tableConfig, ItabelData } from './table';
+import {ItabelData } from './table';
 import {
   getListApi,
   PageParams,
@@ -155,7 +155,6 @@ Vue.directive('paste', {
 
 @Component
 export default class Home extends Vue {
-  private tableConfig = tableConfig; //
   private tableData!: any[]; // 表格数据
   private page: number = 1; // 当前页
   private pageSize: number = 10; // 当前每页数量
