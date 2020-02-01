@@ -20,7 +20,7 @@ module.exports = {
     output: {
         filename: 'main.[hash:8].js',
         path: resolve('dist'),
-        publicPath: './',
+        publicPath: '/',
     },
     module: {
         rules: [

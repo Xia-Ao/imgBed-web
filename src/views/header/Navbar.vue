@@ -43,14 +43,11 @@ Vue.use(MenuItemGroup);
 export default class Navbar extends Vue {
     private menus!: [];
     private logoImg: string =
-        "http://h0.hucdn.com/open202004/8ef5d2e0798f644d_292x200.png";
+        "//h0.hucdn.com/open202004/8ef5d2e0798f644d_292x200.png";
     private data() {
         return {
             menus: menu
         };
-    }
-    private created() {
-        console.log(this.menus);
     }
     private menuClick(path: string): void {}
     /**
@@ -58,7 +55,6 @@ export default class Navbar extends Vue {
      */
     private goHome(): void {
         this.$router.push('/')
-        console.log('111goHome');
     }
 }
 </script>
