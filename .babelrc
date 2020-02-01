@@ -1,0 +1,24 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            // Browserslist使用默认 https://github.com/browserslist/browserslist#queries
+            {
+                "modules": false,
+                "useBuiltIns": "usage",
+                "targets": "ie >= 8"
+            }
+        ]
+    ],
+    "plugins": [
+        ["@babel/plugin-transform-runtime", {"corejs": { "version": 3, "proposals": true },}],
+        ["@babel/plugin-proposal-decorators", {"legacy": true}],
+        ["@babel/plugin-proposal-class-properties", {"loose": true}],
+        ["component",
+            {
+                "libraryName": "element-ui",
+                "styleLibraryName": "theme-chalk"
+            }
+        ]
+    ]
+}
