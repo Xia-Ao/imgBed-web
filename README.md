@@ -5,7 +5,7 @@
 
 ### 技术栈
 - web端使用 vue2.x + ts + element-ui，
-- 服务端使用 node + koa ，
+- 服务端使用 node + koa ，项目地址：https://github.com/Xia-Ao/fdfs_server
 - 图片服务器使用`fastdfs`存储，
 - 运维层采用`nginx`部署。
 
