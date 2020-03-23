@@ -35,7 +35,7 @@
                 <el-table-column label="文件预览" align="center">
                     <template slot-scope="scope">
                         <el-popover trigger="hover" placement="right">
-                            <img :src="scope.row.url" alt class="hover-img" />
+                            <img class="table-hover-img" :src="scope.row.url" alt/>
                             <img
                                 slot="reference"
                                 :src="scope.row.url"
@@ -485,14 +485,15 @@ export default class Home extends Vue {
     }
 }
 .img-table {
-    .hover-img {
-        max-width: 800px;
-    }
     .preview-img {
         width: 50px;
         height: auto;
         cursor: pointer;
     }
+}
+// 因为popover组件 采用是slot，所以要放在外面
+.table-hover-img {
+    max-width: 200px;
 }
 
 .table-filter {
