@@ -12,6 +12,8 @@ import { Vue, Component } from 'vue-property-decorator';
   }
 })
 export default class App extends Vue {
+  private created(): void {
+  }
 }
 </script>
 

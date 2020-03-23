@@ -2,7 +2,7 @@
  * @Author: ao.xia 
  * @Date: 2020-01-07 00:01:02 
  * @Last Modified by: ao.xia
- * @Last Modified time: 2020-01-24 14:52:59
+ * @Last Modified time: 2020-03-23 17:33:53
  */
 const merge = require('webpack-merge');
 const webpack = require('webpack');
@@ -13,8 +13,8 @@ module.exports = merge(baseConfig, {
     mode: 'development',
     devServer: {
         hot: true,
-        port: 8080,
-        // open: true,
+        port: 8090,
+        open: true,
     },
     devtool: 'cheap-eval-source-map',
     watch: true,
