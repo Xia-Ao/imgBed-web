@@ -1,8 +1,8 @@
 <template>
     <div class="about">
-        <p class="item">嗷嗷图床</p>
-        <p class="item">Github: https://github.com/Xia-Ao</p>
-        <p class="item">联系：xiaao9527@gamil.com</p>
+        <p class="item">联系：</p>
+        <p class="item">Github: <a href="https://github.com/Xia-Ao/imgBed-web" class="">Github</a></p>
+        <p class="item">Email：<a href="xiaao9527@gamil.com" class=""></a>xiaao9527@gamil.com</p>
     </div>
 </template>
 
